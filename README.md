@@ -1,4 +1,4 @@
-# Decamp Portfolio
+# Devcamp Portfolio
 
 > This is a Ruby on Rails application that that allow users to create their own portfolios
 
@@ -15,9 +15,9 @@
 def example_method
   puts "this is an example"
 end
-'''
+```
 
-'''javascript
+```javascript
 alert('Example javascript');
 ```
 
