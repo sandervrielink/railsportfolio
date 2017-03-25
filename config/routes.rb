@@ -15,8 +15,12 @@ Rails.application.routes.draw do
   # door bovenstaande is de URI dus veranderd. Zie rake routes.
   # Er staat nu gewoon/about en /contact ip pages/contact en pages/about
 
-  resources :blogs
-
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
+  
   # De homepage voor de applicatie, hoeft geen home te heten
   root to: 'pages#home'
 end
