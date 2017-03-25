@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   # Maak alle routes aan, behalve die van show
-  resources :portfolios, except [:show]
+  resources :portfolios, except: [:show]
   #voor show maak een aparte aan,namelijk portfolio/id ipv portfolios/id zoals het was
-  get 'portfolio/id', to: 'portfolios#show'
+  get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
   
   get 'pages/home'
 
