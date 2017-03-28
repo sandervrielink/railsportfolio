@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Maak alle routes aan, behalve die van show
   resources :portfolios, except: [:show]
   #voor show maak een aparte aan,namelijk portfolio/id ipv portfolios/id zoals het was
