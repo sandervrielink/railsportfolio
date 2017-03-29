@@ -4,6 +4,6 @@ module Placeholder
   
   #De method hieronder is straks altijd aanspreekbaar via Placeholder.image_generator 
   def self.image_generator(height:, width:)
-    "https://placehold.it/#{height}x#{width}"
+    "http://placehold.it/#{height}x#{width}"
   end  
 end
