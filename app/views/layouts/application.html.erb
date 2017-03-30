@@ -14,18 +14,22 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
-    <%= render "shared/nav", location: 'top' %>
-    <!--Geef een local variable location mee met 'top'-->
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
 
-    <%= login_helper %>
+          <%= render "shared/application_nav" %>
+          <!--Geef een local variable location mee met 'top'-->
       
-    <%= yield %>
-    
-    <%= @copyright %>
-    
-    <%= source_helper("application") %>
+          <%= login_helper %>
+            
+          <%= yield %>
+          
+          <%= @copyright %>
+          
+          <%= source_helper("application") %>
+         </div>
+      </div>
+    </div>
   </body>
 </html>
