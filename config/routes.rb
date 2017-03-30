@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :portfolios, except: [:show]
   #voor show maak een aparte aan,namelijk portfolio/id ipv portfolios/id zoals het was
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
+  get 'angular-items', to: 'portfolios#angular'
   
   get 'pages/home'
 
