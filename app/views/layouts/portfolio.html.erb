@@ -14,6 +14,10 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     
+        
+    <%= render "shared/nav", location: 'top' %>
+    <!--Geef een local variable location mee met 'top'-->
+    
     <% if current_user.is_a?(User) %> 
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
     <% else %>
@@ -22,9 +26,7 @@
     <% end %>
       
     <%= yield %>
-    
-    <%= render "shared/nav" %>
-    
+
     <% if session[:source] %>
       <p>Thanks from visiting me from <%= session[:source] %></p>
     <% end %>
