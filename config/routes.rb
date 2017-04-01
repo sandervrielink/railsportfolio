@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   # Maak alle routes aan, behalve die van show
-  resources :portfolios, except: [:show]
+  resources :portfolios, except: [:show] do
+    put :sort, on: :collection
+  end
+  
   #voor show maak een aparte aan,namelijk portfolio/id ipv portfolios/id zoals het was
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
   get 'angular-items', to: 'portfolios#angular'
