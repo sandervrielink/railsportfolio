@@ -18,3 +18,4 @@
 
 # Ignore secret file
 /config/secrets.yml
+.env
