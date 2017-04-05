@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   # Maak alle routes aan, behalve die van show
   resources :portfolios, except: [:show] do
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
       get :toggle_status
     end
   end
+  mount ActionCable.server => '/cable'
   
   # De homepage voor de applicatie, hoeft geen home te heten
   root to: 'pages#home'
