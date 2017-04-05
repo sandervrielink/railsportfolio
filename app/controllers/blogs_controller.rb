@@ -17,10 +17,14 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
-    @page_title = @blog.title
-    @seo_keywords = @blog.title #eigenlijk moet je hier een apart veld voor maken in de table
+    if logged_in?(:site_admin) || @blog.published?
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
+      @page_title = @blog.title
+      @seo_keywords = @blog.title #eigenlijk moet je hier een apart veld voor maken in de table
+    else
+      redirect_to blogs_path, notice: "You are not authorized to access this page"
+    end
   end
 
   # GET /blogs/new
