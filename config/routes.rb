@@ -17,8 +17,9 @@ Rails.application.routes.draw do
   # je gebruikt dus de mapping die je aan de rechtrkant van de rake routes ziet
 
   get '/contact', to: 'pages#contact'
-  # door bovenstaande is de URI dus veranderd. Zie rake routes.
+    # door bovenstaande is de URI dus veranderd. Zie rake routes.
   # Er staat nu gewoon/about en /contact ip pages/contact en pages/about
+  get '/tech-news', to: 'pages#tech_news'
 
   resources :blogs do
     member do
