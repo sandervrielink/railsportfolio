@@ -4,6 +4,25 @@
     <div class="row">
       <div class="col-md-4">
         <%= image_tag "rsz_1graphic.jpg", width: 300, alt: "Profiel foto", class: "profile-img" %>
+        <div class="skills">
+          <% @skills.each do |skill| %>
+            <div class="skill">
+              <h4><%= skill.titel %></h4>
+              <div class="progress">
+                <div 
+                  class="progress-bar progress-bar-striped bg-warning"
+                  role="progressbar" 
+                  aria-valuenow="<%= skill.percent_utilized %>"
+                  aria-valuemax="100" 
+                  style="width: <%= skill.percent_utilized %>%"
+                >
+                  
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
       </div>
       <div class="col-md-8">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, magnam, eligendi illo ipsa minus velit dicta corrupti cum qui laborum cumque explicabo suscipit tempora rem ipsam laudantium ad ullam placeat.</p>
@@ -13,8 +32,8 @@
             type="button" 
             data-toggle="collapse" 
             data-target="#jobHistory" 
-            area-expanded="false" 
-            area-controler="jobHistory"
+            aria-expanded="false" 
+            aria-controler="jobHistory"
           > Werkervaring
           </button>
           <button
@@ -22,8 +41,8 @@
             type="button" 
             data-toggle="collapse" 
             data-target="#eduHistory" 
-            area-expanded="false" 
-            area-controler="eduHistory"
+            aria-expanded="false" 
+            aria-controler="eduHistory"
           > Opleidingen
           </button>
         </p>
