@@ -1,9 +1,79 @@
-<h1>Over mij</h1>
-<div class="row">
-  <div class="col-md-4">
-    <%= image_tag "rsz_1graphic.jpg", width: 300, alt: "Profiel foto" %>
-  </div>
-  <div class="col-md-8">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, magnam, eligendi illo ipsa minus velit dicta corrupti cum qui laborum cumque explicabo suscipit tempora rem ipsam laudantium ad ullam placeat.</p>
+<div class="app-card-container">
+  <div class="card">
+    <h1 class="header-margin-bottom">Over mij</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag "rsz_1graphic.jpg", width: 300, alt: "Profiel foto", class: "profile-img" %>
+        <div class="skills">
+          <% @skills.each do |skill| %>
+            <div class="skill">
+              <h4><%= skill.titel %></h4>
+              <div class="progress">
+                <div 
+                  class="progress-bar progress-bar-striped bg-warning progress-bar-animated"
+                  role="progressbar" 
+                  aria-valuenow="<%= skill.percent_utilized %>"
+                  aria-valuemax="100" 
+                  style="width: <%= skill.percent_utilized %>%"
+                >
+                  
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+      <div class="col-md-8">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, magnam, eligendi illo ipsa minus velit dicta corrupti cum qui laborum cumque explicabo suscipit tempora rem ipsam laudantium ad ullam placeat.</p>
+        <p>
+          <button
+            class="btn btn-primary" 
+            type="button" 
+            data-toggle="collapse" 
+            data-target="#jobHistory" 
+            aria-expanded="false" 
+            aria-controler="jobHistory"
+          > Werkervaring
+          </button>
+          <button
+            class="btn btn-primary" 
+            type="button" 
+            data-toggle="collapse" 
+            data-target="#eduHistory" 
+            aria-expanded="false" 
+            aria-controler="eduHistory"
+          > Opleidingen
+          </button>
+        </p>
+        <p>
+          <div class="collapse" id="jobHistory">
+            <div class="card card-block">
+              Job 1
+            </div>
+            <div class="card card-block">
+              Job 2
+            </div>
+            <div class="card card-block">
+              Job 3
+            </div>
+            <div class="card card-block">
+              Job 4
+            </div>
+          </div>
+          <div class="collapse" id="eduHistory">
+            <div class="card card-block">
+              Opleiding 1
+            </div>
+            <div class="card card-block">
+              Opleiding
+            </div>
+            <div class="card card-block">
+              Opleiding 3
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
   </div>
 </div>
